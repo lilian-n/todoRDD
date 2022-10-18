@@ -26,7 +26,7 @@ export class Todo {
     return this.props.isCompleted;
   }
 
-  public static create(content: string) {
+  public static create(content: string, isCompleted?: boolean) {
     const isValidLength =
       TextUtil.isAtLeast(5, content) && TextUtil.isAtMost(30, content);
 
@@ -36,6 +36,7 @@ export class Todo {
 
     const args = {
       content: content,
+      isCompleted: isCompleted,
     };
 
     return Result.ok<Todo>(new Todo(args));
