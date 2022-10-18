@@ -18,6 +18,9 @@ export class Todo {
     this.props.isCompleted = props.isCompleted ? props.isCompleted : false;
   }
 
+  public getId() {
+    return this.props.id;
+  }
   public getContent() {
     return this.props.content;
   }
